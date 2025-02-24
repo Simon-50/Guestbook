@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gästboken</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Gästboken</h1>
+        </header>
+        <main>
+            <section id="write-post">
+                <h2>Nytt inlägg</h2>
+                <form action="/add" method="post">
+                    <input type="text" name="name" id="name" placeholder="Your name" required />
+
+                    <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Write your message here"
+                        required
+                    ></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+            <section id="previous-posts">
+                <h2>Tidigare inlägg</h2>
+                <% guestbook.forEach(post => { %>
+                <div class="post">
+                    <p><%= post[1] %></p>
+                    <h3><%= post[0] %></h3>
+                </div>
+                <% }) %>
+            </section>
+        </main>
+    </body>
+</html>
