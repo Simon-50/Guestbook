@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 // Database
 const db = new pg.Client({
     user: 'postgres',
-    password: 'ec5Zmbnd',
+    password: 'yourPassord',
 
     host: 'localhost',
     database: 'Guestbook',
