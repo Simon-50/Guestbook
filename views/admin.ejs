@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Admin</title>
+    </head>
+    <body>
+        <header>
+            <h1>Admin - hantera inlägg</h1>
+            <a href="/">
+                <button>Tillbaka</button>
+            </a>
+        </header>
+        <% guestbook.forEach(post => { %>
+        <div class="post">
+            <form action="/update/<%= post['id'] %>" method="post">
+                <textarea id="update" name="updatedMsg" required /><%= post['meddelande']%></textarea>
+                <h2><%= post['namn'] %></h2>
+                <br>
+                <button type="submit">Uppdatera</button>
+            </form>
+            <br>
+            <form action="/delete/<%= post['id'] %>" method="post">
+                <button type="submit">Ta bort</button>
+            </form>
+        </div>
+        <% }); %>
+    </body>
+</html>

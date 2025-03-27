@@ -9,6 +9,10 @@
     <body>
         <header>
             <h1>Gästboken</h1>
+
+            <a href="/login">
+                <button>Logga in</button>
+            </a>
         </header>
         <main>
             <section id="write-post">
@@ -30,7 +34,7 @@
                 <% guestbook.forEach(post => { %>
                 <div class="post">
                     <p><%= post[1] %></p>
-                    <h3><%= post[0] %></h3>
+                    <h4><%= post[0] %></h4>
                 </div>
                 <% }) %>
             </section>

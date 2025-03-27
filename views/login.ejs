@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Logga in</title>
+    </head>
+    <body>
+        <header>
+            <h1>Admin - Logga in</h1>
+        </header>
+        <form action="/login" method="POST">
+            <label for="name">Användarnamn</label>
+            <input type="text" id="admin_name" name="admin_name" required />
+
+            <label for="password">Lösenord</label>
+            <input type="password" id="password" name="password" required />
+
+            <button id="button" type="submit">Logga in</button>
+            <% if (message) { %>
+            <p style="color: crimson"><%= message %></p>
+            <% } %>
+        </form>
+    </body>
+</html>
